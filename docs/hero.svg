@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="680" viewBox="0 0 1440 680" role="img">
+  <title>MealMetric Android meal journal</title>
+  <desc>A deep green product banner with the MealMetric identity and an illustrated daily nutrition screen.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D2F29"/>
+      <stop offset="0.58" stop-color="#153D35"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B7E36D" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#74D8C7" stop-opacity=".02"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#071C18" flood-opacity=".45"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="680" rx="34" fill="url(#bg)"/>
+  <circle cx="1310" cy="80" r="290" fill="url(#glow)"/>
+  <circle cx="115" cy="640" r="205" fill="#F9735B" opacity=".07"/>
+  <path d="M0 545C242 484 385 585 609 531C861 471 1013 348 1440 433V680H0Z" fill="#D9F5E8" opacity=".035"/>
+
+  <g transform="translate(96 101)">
+    <g transform="translate(0 0)">
+      <circle cx="46" cy="46" r="46" fill="#D9F5E8"/>
+      <path d="M20 50a26 26 0 0 0 52 0h-7a19 19 0 0 1-38 0Z" fill="#0F766E"/>
+      <path d="M27 43a19 19 0 0 1 38 0Z" fill="#B7E36D"/>
+      <path d="M47 41c0-13 8-21 21-22 0 12-8 20-21 22Z" fill="#F9735B"/>
+      <path d="M44 42c-2-10-7-16-16-18-1 10 5 16 16 18Z" fill="#0F766E"/>
+      <path d="m46 43 5-17" stroke="#153D35" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+
+    <text x="0" y="162" fill="#B7E36D" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">ANDROID • LOCAL-FIRST</text>
+    <text x="0" y="232" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="68" font-weight="800">MealMetric</text>
+    <text x="0" y="282" fill="#D8E7DE" font-family="Arial, sans-serif" font-size="28" font-weight="500">Mindful meals. Measurable progress.</text>
+    <text x="0" y="348" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="21">A focused daily journal with private on-device storage,</text>
+    <text x="0" y="380" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="21">optional nutrition search, and a calm Material interface.</text>
+
+    <g transform="translate(0 429)">
+      <rect width="154" height="47" rx="23.5" fill="#B7E36D"/>
+      <text x="77" y="30" text-anchor="middle" fill="#153D35" font-family="Arial, sans-serif" font-size="16" font-weight="800">ROOM</text>
+      <rect x="166" width="154" height="47" rx="23.5" fill="none" stroke="#74D8C7" stroke-width="1.5"/>
+      <text x="243" y="30" text-anchor="middle" fill="#D9F5E8" font-family="Arial, sans-serif" font-size="16" font-weight="700">RETROFIT</text>
+      <rect x="332" width="154" height="47" rx="23.5" fill="none" stroke="#F9735B" stroke-width="1.5"/>
+      <text x="409" y="30" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="700">MATERIAL 3</text>
+    </g>
+  </g>
+
+  <g transform="translate(929 42)" filter="url(#shadow)">
+    <rect width="392" height="596" rx="48" fill="#0A1713"/>
+    <rect x="12" y="12" width="368" height="572" rx="38" fill="#F4F8F5"/>
+    <rect x="146" y="25" width="100" height="8" rx="4" fill="#C7D5CC"/>
+
+    <g transform="translate(39 58)">
+      <circle cx="24" cy="24" r="24" fill="#153D35"/>
+      <path d="M10 27a14 14 0 0 0 28 0h-4a10 10 0 0 1-20 0Z" fill="#B7E36D"/>
+      <path d="M14 23a10 10 0 0 1 20 0Z" fill="#D9F5E8"/>
+      <path d="M25 22c0-7 4-11 11-12 0 7-4 11-11 12Z" fill="#F9735B"/>
+      <text x="61" y="19" fill="#17251F" font-family="Arial, sans-serif" font-size="24" font-weight="800">MealMetric</text>
+      <text x="61" y="40" fill="#56665D" font-family="Arial, sans-serif" font-size="11">Mindful meals. Measurable progress.</text>
+    </g>
+
+    <text x="39" y="142" fill="#17251F" font-family="Arial, sans-serif" font-size="21" font-weight="800">Today’s nutrition</text>
+    <rect x="39" y="159" width="314" height="184" rx="22" fill="#153D35"/>
+    <text x="61" y="191" fill="#B7E36D" font-family="Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1">DAILY SNAPSHOT</text>
+    <text x="61" y="215" fill="#D8E7DE" font-family="Arial, sans-serif" font-size="11">Tuesday, July 21</text>
+    <text x="61" y="269" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="39" font-weight="800">1,420 kcal</text>
+    <text x="61" y="291" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="1">TOTAL ENERGY</text>
+    <line x1="61" y1="309" x2="331" y2="309" stroke="#3D6157"/>
+    <text x="61" y="329" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="700">3 meals logged</text>
+
+    <rect x="39" y="360" width="314" height="118" rx="20" fill="#FFFFFF" stroke="#C7D5CC"/>
+    <text x="57" y="389" fill="#17251F" font-family="Arial, sans-serif" font-size="16" font-weight="800">Smart food lookup</text>
+    <text x="57" y="408" fill="#56665D" font-family="Arial, sans-serif" font-size="10">Describe a food or dish</text>
+    <rect x="57" y="423" width="278" height="39" rx="11" fill="#F4F8F5" stroke="#0F766E"/>
+    <circle cx="75" cy="442" r="6" fill="none" stroke="#0F766E" stroke-width="2"/>
+    <line x1="79" y1="447" x2="84" y2="452" stroke="#0F766E" stroke-width="2"/>
+    <text x="94" y="446" fill="#56665D" font-family="Arial, sans-serif" font-size="10">two eggs and toast</text>
+
+    <rect x="39" y="494" width="314" height="48" rx="14" fill="#0F766E"/>
+    <text x="196" y="524" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="800">＋  Log a Meal</text>
+  </g>
+</svg>
