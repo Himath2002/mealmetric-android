@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MealMetric" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_emerald</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/brand_mint</item>
+        <item name="colorOnPrimaryContainer">@color/brand_forest</item>
+        <item name="colorSecondary">@color/brand_coral</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="android:colorAccent">@color/brand_emerald</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MealMetric.AlertDialog</item>
+    </style>
+
+    <style name="ThemeOverlay.MealMetric.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/brand_emerald</item>
+    </style>
+
+    <style name="Widget.MealMetric.Button.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/brand_emerald</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:minHeight">52dp</item>
+    </style>
+
+    <style name="Widget.MealMetric.Button.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/brand_emerald</item>
+        <item name="android:textColor">@color/brand_emerald</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:minHeight">52dp</item>
+    </style>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MealMetric" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_emerald</item>
+        <item name="colorOnPrimary">@color/background</item>
+        <item name="colorPrimaryContainer">@color/brand_mint</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary</item>
+        <item name="colorSecondary">@color/brand_coral</item>
+        <item name="colorOnSecondary">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="android:colorAccent">@color/brand_emerald</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MealMetric.AlertDialog</item>
+    </style>
+</resources>

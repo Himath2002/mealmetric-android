@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path android:fillColor="@color/brand_emerald" android:pathData="M4,4H20Q22,4 22,6V18Q22,20 20,20H4Q2,20 2,18V6Q2,4 4,4M4,6V16L8,12L11,15L15,10L20,16V6M8,7A2,2 0,1 0,8 11A2,2 0,1 0,8 7Z" />
+</vector>

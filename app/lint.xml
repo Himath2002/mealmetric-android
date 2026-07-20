@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <!-- API 36 is the latest stable platform; API 37 is newer but not the stable baseline. -->
+    <issue id="OldTargetApi">
+        <ignore path="build.gradle.kts" />
+    </issue>
+    <issue id="GradleDependency">
+        <ignore path="build.gradle.kts" />
+        <!-- Dependabot owns dependency-currency reporting for the version catalog. -->
+        <ignore path="../gradle/libs.versions.toml" />
+    </issue>
+
+    <!-- Keep wrapper-version notices scoped to the root wrapper, not source lint. -->
+    <issue id="AndroidGradlePluginVersion">
+        <ignore regexp="gradle-9\.6\.1-bin\.zip" />
+    </issue>
+</lint>

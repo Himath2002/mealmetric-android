@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">MealMetric</string>
+    <string name="app_tagline">Mindful meals. Measurable progress.</string>
+    <string name="today_overview_title">Today’s nutrition</string>
+    <string name="daily_summary_title">Daily snapshot</string>
+    <string name="total_energy_label">TOTAL ENERGY</string>
+    <string name="zero_calories">0 kcal</string>
+    <string name="calorie_total_value" tools:ignore="PluralsCandidate">%1$d kcal</string>
+
+    <plurals name="meal_count">
+        <item quantity="one">%1$d meal logged</item>
+        <item quantity="other">%1$d meals logged</item>
+    </plurals>
+
+    <string name="food_lookup_title">Smart food lookup</string>
+    <string name="food_lookup_description">Estimate nutrition from a natural-language food search.</string>
+    <string name="food_search_hint">e.g. two eggs and toast</string>
+    <string name="food_search_action">Search Nutrition</string>
+    <string name="food_search_required">Enter a food or dish to search.</string>
+    <string name="food_search_empty">No nutrition matches were returned.</string>
+    <string name="food_search_network_error">Could not reach the nutrition service.</string>
+    <string name="food_search_credentials_error">Check the local Nutritionix credentials.</string>
+    <string name="food_search_service_error">Nutrition search is temporarily unavailable.</string>
+    <string name="food_search_results_title">Choose a nutrition result</string>
+    <string name="food_search_result" tools:ignore="PluralsCandidate">%1$s · %2$s %3$s · %4$d kcal</string>
+    <string name="search_configuration_title">Optional search setup</string>
+    <string name="search_configuration_message">Manual meal logging is ready. To enable Nutritionix search, copy secrets.properties.example to secrets.properties and add your own application credentials.</string>
+    <string name="search_progress_description">Searching nutrition data</string>
+
+    <string name="log_meal_action">Log a Meal</string>
+    <string name="meal_log_title">Today’s meal log</string>
+    <string name="meal_log_description">Entries are stored privately on this device.</string>
+    <string name="empty_meal_title">Your day is ready</string>
+    <string name="empty_meal_message">Log a meal or search for nutrition details to begin today’s journal.</string>
+
+    <string name="log_meal_title">Log meal</string>
+    <string name="choose_photo_action">Choose an Optional Photo</string>
+    <string name="meal_photo_description">Photo for %1$s</string>
+    <string name="meal_photo_placeholder_description">Meal photo placeholder</string>
+    <string name="selected_meal_photo_description">Selected meal photo</string>
+    <string name="meal_name_hint">Meal name</string>
+    <string name="meal_calories_hint">Calories</string>
+    <string name="meal_type_hint">Meal type</string>
+    <string name="macronutrient_summary">Protein %1$.1f g · Carbs %2$.1f g · Fat %3$.1f g</string>
+    <string name="save_meal_action">Save Meal</string>
+    <string name="meal_name_required">Enter a meal name.</string>
+    <string name="meal_calories_required">Enter the calorie amount.</string>
+    <string name="meal_calories_invalid">Enter a calorie amount greater than zero.</string>
+    <string name="meal_type_required">Choose a meal type.</string>
+    <string name="meal_saved_message">Meal added to today’s journal.</string>
+    <string name="calorie_value" tools:ignore="PluralsCandidate">%1$d kcal</string>
+
+    <string-array name="meal_types">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Snack</item>
+    </string-array>
+
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+</resources>

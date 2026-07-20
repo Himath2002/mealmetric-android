@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="160dp"
+    android:viewportWidth="160"
+    android:viewportHeight="160">
+    <path android:fillColor="@color/brand_mint" android:pathData="M80,4A76,76 0,1 0,80 156A76,76 0,1 0,80 4" android:fillAlpha="0.7" />
+    <path android:fillColor="@color/surface" android:pathData="M42,31Q42,24 49,24H111Q118,24 118,31V130Q118,137 111,137H49Q42,137 42,130Z" />
+    <path android:fillColor="@color/brand_emerald" android:pathData="M64,19H96Q101,19 101,24V35H59V24Q59,19 64,19Z" />
+    <path android:fillColor="@color/brand_citrus" android:pathData="M58,80A22,22 0,0 0,102 80L96,80A16,16 0,0 1,64 80Z" />
+    <path android:fillColor="@color/surface_variant" android:pathData="M64,74A16,16 0,0 1,96 74Z" />
+    <path android:fillColor="@color/brand_coral" android:pathData="M81,73C81,62 87,55 98,54C98,65 92,71 81,73Z" />
+    <path android:fillColor="@color/brand_citrus" android:pathData="M78,74C76,64 71,59 63,57C62,66 67,72 78,74Z" />
+    <path android:fillColor="@color/brand_emerald" android:pathData="M57,102H103V108H57Z" android:fillAlpha="0.32" />
+    <path android:fillColor="@color/brand_emerald" android:pathData="M57,115H91V121H57Z" android:fillAlpha="0.2" />
+</vector>

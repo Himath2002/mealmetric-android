@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_forest">#D9F5E8</color>
+    <color name="brand_emerald">#74D8C7</color>
+    <color name="brand_mint">#173E37</color>
+    <color name="brand_citrus">#C7EC87</color>
+    <color name="brand_coral">#FF9B86</color>
+    <color name="background">#0E1713</color>
+    <color name="surface">#17211C</color>
+    <color name="surface_variant">#26322C</color>
+    <color name="outline">#687970</color>
+    <color name="text_primary">#E7F1EB</color>
+    <color name="text_secondary">#B8C7BE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="launcher_background">#153D35</color>
+    <color name="summary_secondary">#D8E7DE</color>
+    <color name="summary_muted">#AFC6B8</color>
+    <color name="summary_divider">#3D6157</color>
+</resources>

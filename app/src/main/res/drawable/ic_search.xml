@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:tint="@color/brand_emerald"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path android:fillColor="@android:color/white" android:pathData="M9.5,3A6.5,6.5 0,1 0,9.5 16A6.5,6.5 0,1 0,9.5 3M9.5,5A4.5,4.5 0,1 1,9.5 14A4.5,4.5 0,1 1,9.5 5M14.3,13L21,19.7L19.7,21L13,14.3Z" />
+</vector>
