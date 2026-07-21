@@ -1,89 +1,101 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="760" viewBox="0 0 1440 760" role="img">
   <title>MealMetric product walkthrough</title>
-  <desc>Three illustrated steps: describe or enter a meal, review details with an optional local photo, and see the daily journal update.</desc>
+  <desc>Three precisely aligned panels show meal capture, confirmation, and the resulting daily journal update.</desc>
   <defs>
     <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="1" stop-color="#F4F8F5"/>
+      <stop offset="1" stop-color="#F6F9F7"/>
     </linearGradient>
-    <filter id="soft" x="-20%" y="-20%" width="140%" height="150%">
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="150%">
       <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#153D35" flood-opacity=".12"/>
     </filter>
   </defs>
+
   <rect width="1440" height="760" rx="32" fill="#E9F0EB"/>
+  <text x="720" y="58" text-anchor="middle" fill="#153D35" font-family="Arial, sans-serif" font-size="30" font-weight="800">One focused loop, three clear moments</text>
+  <text x="720" y="91" text-anchor="middle" fill="#56665D" font-family="Arial, sans-serif" font-size="16">Capture a meal • confirm the details • understand the day</text>
 
-  <text x="720" y="62" text-anchor="middle" fill="#153D35" font-family="Arial, sans-serif" font-size="30" font-weight="800">One focused loop, three clear moments</text>
-  <text x="720" y="95" text-anchor="middle" fill="#56665D" font-family="Arial, sans-serif" font-size="16">Capture → confirm → understand your day</text>
+  <!-- Equal connector wells: both chevrons share the same size and vertical centre. -->
+  <g transform="translate(481 415)">
+    <circle r="22" fill="#FFFFFF" stroke="#C7D5CC"/>
+    <path d="M-7 0H7M2-6l7 6-7 6" fill="none" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(959 415)">
+    <circle r="22" fill="#FFFFFF" stroke="#C7D5CC"/>
+    <path d="M-7 0H7M2-6l7 6-7 6" fill="none" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 
-  <path d="M428 385H500" stroke="#0F766E" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 10"/>
-  <path d="m492 376 12 9-12 9" fill="none" stroke="#0F766E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M940 385h72" stroke="#0F766E" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 10"/>
-  <path d="m1004 376 12 9-12 9" fill="none" stroke="#0F766E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <g transform="translate(64 131)" filter="url(#soft)">
-    <rect width="364" height="558" rx="26" fill="url(#panel)"/>
+  <!-- Capture -->
+  <g transform="translate(60 130)" filter="url(#soft-shadow)">
+    <rect width="364" height="570" rx="26" fill="url(#panel)"/>
     <circle cx="42" cy="42" r="21" fill="#153D35"/>
     <text x="42" y="49" text-anchor="middle" fill="#B7E36D" font-family="Arial, sans-serif" font-size="18" font-weight="800">1</text>
     <text x="76" y="40" fill="#17251F" font-family="Arial, sans-serif" font-size="21" font-weight="800">Capture</text>
-    <text x="76" y="62" fill="#56665D" font-family="Arial, sans-serif" font-size="13">Search or log directly</text>
+    <text x="76" y="62" fill="#56665D" font-family="Arial, sans-serif" font-size="13">Search when configured—or log directly</text>
 
-    <rect x="27" y="96" width="310" height="170" rx="20" fill="#FFFFFF" stroke="#C7D5CC"/>
-    <text x="49" y="129" fill="#17251F" font-family="Arial, sans-serif" font-size="17" font-weight="800">Smart food lookup</text>
-    <text x="49" y="151" fill="#56665D" font-family="Arial, sans-serif" font-size="11">Natural language, when configured</text>
+    <rect x="27" y="96" width="310" height="178" rx="20" fill="#FFFFFF" stroke="#C7D5CC"/>
+    <text x="49" y="128" fill="#17251F" font-family="Arial, sans-serif" font-size="17" font-weight="800">Smart food lookup</text>
+    <text x="49" y="151" fill="#56665D" font-family="Arial, sans-serif" font-size="11">Natural language • optional integration</text>
     <rect x="49" y="171" width="266" height="44" rx="12" fill="#F4F8F5" stroke="#0F766E"/>
     <circle cx="69" cy="193" r="7" fill="none" stroke="#0F766E" stroke-width="2"/>
     <line x1="74" y1="198" x2="80" y2="204" stroke="#0F766E" stroke-width="2"/>
     <text x="90" y="197" fill="#56665D" font-family="Arial, sans-serif" font-size="11">chicken rice bowl</text>
-    <rect x="49" y="226" width="266" height="23" rx="11.5" fill="#D9F5E8"/>
-    <text x="182" y="242" text-anchor="middle" fill="#0F766E" font-family="Arial, sans-serif" font-size="10" font-weight="800">SEARCH NUTRITION</text>
+    <rect x="49" y="226" width="266" height="25" rx="12.5" fill="#D9F5E8"/>
+    <text x="182" y="243" text-anchor="middle" fill="#0F766E" font-family="Arial, sans-serif" font-size="10" font-weight="800">SEARCH NUTRITION</text>
 
-    <rect x="27" y="285" width="310" height="51" rx="14" fill="#0F766E"/>
-    <text x="182" y="317" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="800">＋  Log a Meal</text>
+    <text x="182" y="302" text-anchor="middle" fill="#829188" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1">OR</text>
+    <rect x="27" y="318" width="310" height="52" rx="14" fill="#0F766E"/>
+    <text x="182" y="350" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="800">＋  Log a Meal</text>
 
-    <g transform="translate(27 375)">
+    <g transform="translate(27 407)">
       <circle cx="36" cy="36" r="36" fill="#D9F5E8"/>
       <path d="M18 40a18 18 0 0 0 36 0h-5a13 13 0 0 1-26 0Z" fill="#0F766E"/>
       <path d="M23 35a13 13 0 0 1 26 0Z" fill="#FFFFFF"/>
       <path d="M37 34c0-9 5-14 14-15 0 8-5 13-14 15Z" fill="#F9735B"/>
       <text x="89" y="27" fill="#17251F" font-family="Arial, sans-serif" font-size="15" font-weight="700">Manual mode is complete</text>
-      <text x="89" y="50" fill="#56665D" font-family="Arial, sans-serif" font-size="12">No API key required</text>
+      <text x="89" y="50" fill="#56665D" font-family="Arial, sans-serif" font-size="12">No API key is required</text>
     </g>
   </g>
 
-  <g transform="translate(538 131)" filter="url(#soft)">
-    <rect width="364" height="558" rx="26" fill="url(#panel)"/>
+  <!-- Confirm -->
+  <g transform="translate(538 130)" filter="url(#soft-shadow)">
+    <rect width="364" height="570" rx="26" fill="url(#panel)"/>
     <circle cx="42" cy="42" r="21" fill="#F9735B"/>
     <text x="42" y="49" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="800">2</text>
     <text x="76" y="40" fill="#17251F" font-family="Arial, sans-serif" font-size="21" font-weight="800">Confirm</text>
-    <text x="76" y="62" fill="#56665D" font-family="Arial, sans-serif" font-size="13">Review the structured entry</text>
+    <text x="76" y="62" fill="#56665D" font-family="Arial, sans-serif" font-size="13">Review the structured journal entry</text>
 
-    <rect x="31" y="95" width="302" height="428" rx="22" fill="#FFFFFF" stroke="#C7D5CC"/>
+    <rect x="31" y="95" width="302" height="438" rx="22" fill="#FFFFFF" stroke="#C7D5CC"/>
     <text x="52" y="128" fill="#17251F" font-family="Arial, sans-serif" font-size="18" font-weight="800">Log meal</text>
     <rect x="126" y="145" width="112" height="94" rx="18" fill="#E9F0EB"/>
     <path d="M147 199a35 35 0 0 0 70 0h-8a27 27 0 0 1-54 0Z" fill="#D9F5E8"/>
     <path d="M155 190a27 27 0 0 1 54 0Z" fill="#FFFFFF"/>
     <path d="M184 188c0-15 8-23 23-24 0 14-8 22-23 24Z" fill="#F9735B"/>
-    <rect x="52" y="253" width="260" height="45" rx="11" fill="#F4F8F5" stroke="#C7D5CC"/>
-    <text x="66" y="271" fill="#56665D" font-family="Arial, sans-serif" font-size="9">MEAL NAME</text>
-    <text x="66" y="289" fill="#17251F" font-family="Arial, sans-serif" font-size="12" font-weight="700">Chicken rice bowl</text>
-    <rect x="52" y="309" width="124" height="45" rx="11" fill="#F4F8F5" stroke="#C7D5CC"/>
-    <text x="66" y="327" fill="#56665D" font-family="Arial, sans-serif" font-size="9">CALORIES</text>
-    <text x="66" y="345" fill="#17251F" font-family="Arial, sans-serif" font-size="12" font-weight="700">640 kcal</text>
-    <rect x="188" y="309" width="124" height="45" rx="11" fill="#F4F8F5" stroke="#C7D5CC"/>
-    <text x="202" y="327" fill="#56665D" font-family="Arial, sans-serif" font-size="9">MEAL TYPE</text>
-    <text x="202" y="345" fill="#17251F" font-family="Arial, sans-serif" font-size="12" font-weight="700">Lunch</text>
-    <rect x="52" y="366" width="260" height="46" rx="11" fill="#D9F5E8"/>
-    <text x="182" y="394" text-anchor="middle" fill="#0F766E" font-family="Arial, sans-serif" font-size="10" font-weight="700">Protein 36 g · Carbs 62 g · Fat 18 g</text>
-    <rect x="52" y="432" width="260" height="49" rx="13" fill="#0F766E"/>
-    <text x="182" y="462" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="800">Save Meal</text>
+    <rect x="141" y="221" width="82" height="18" rx="9" fill="#153D35"/>
+    <text x="182" y="234" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="8" font-weight="800">OPTIONAL PHOTO</text>
+
+    <rect x="52" y="256" width="260" height="45" rx="11" fill="#F4F8F5" stroke="#C7D5CC"/>
+    <text x="66" y="274" fill="#56665D" font-family="Arial, sans-serif" font-size="9">MEAL NAME</text>
+    <text x="66" y="292" fill="#17251F" font-family="Arial, sans-serif" font-size="12" font-weight="700">Chicken rice bowl</text>
+    <rect x="52" y="312" width="124" height="45" rx="11" fill="#F4F8F5" stroke="#C7D5CC"/>
+    <text x="66" y="330" fill="#56665D" font-family="Arial, sans-serif" font-size="9">CALORIES</text>
+    <text x="66" y="348" fill="#17251F" font-family="Arial, sans-serif" font-size="12" font-weight="700">640 kcal</text>
+    <rect x="188" y="312" width="124" height="45" rx="11" fill="#F4F8F5" stroke="#C7D5CC"/>
+    <text x="202" y="330" fill="#56665D" font-family="Arial, sans-serif" font-size="9">MEAL TYPE</text>
+    <text x="202" y="348" fill="#17251F" font-family="Arial, sans-serif" font-size="12" font-weight="700">Lunch</text>
+    <rect x="52" y="369" width="260" height="46" rx="11" fill="#D9F5E8"/>
+    <text x="182" y="397" text-anchor="middle" fill="#0F766E" font-family="Arial, sans-serif" font-size="10" font-weight="700">Protein 36 g • Carbs 62 g • Fat 18 g</text>
+    <rect x="52" y="435" width="260" height="50" rx="13" fill="#0F766E"/>
+    <text x="182" y="466" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="800">Save Meal</text>
   </g>
 
-  <g transform="translate(1012 131)" filter="url(#soft)">
-    <rect width="364" height="558" rx="26" fill="url(#panel)"/>
+  <!-- Understand -->
+  <g transform="translate(1016 130)" filter="url(#soft-shadow)">
+    <rect width="364" height="570" rx="26" fill="url(#panel)"/>
     <circle cx="42" cy="42" r="21" fill="#0F766E"/>
     <text x="42" y="49" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="800">3</text>
     <text x="76" y="40" fill="#17251F" font-family="Arial, sans-serif" font-size="21" font-weight="800">Understand</text>
-    <text x="76" y="62" fill="#56665D" font-family="Arial, sans-serif" font-size="13">See today update live</text>
+    <text x="76" y="62" fill="#56665D" font-family="Arial, sans-serif" font-size="13">See today’s totals update live</text>
 
     <rect x="27" y="96" width="310" height="163" rx="20" fill="#153D35"/>
     <text x="49" y="128" fill="#B7E36D" font-family="Arial, sans-serif" font-size="10" font-weight="800" letter-spacing="1">DAILY SNAPSHOT</text>

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="620" viewBox="0 0 1440 620" role="img">
-  <title>MealMetric architecture</title>
-  <desc>The main interface connects to a local Room journal, an optional Nutritionix search path, and Android local photo selection.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="780" viewBox="0 0 1440 780" role="img">
+  <title>MealMetric architecture and data boundaries</title>
+  <desc>Three aligned paths connect the Android interface to the local Room journal, optional Nutritionix search, and Android document provider.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
       <path d="M0 0 10 5 0 10Z" fill="#0F766E"/>
@@ -9,85 +9,143 @@
       <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#153D35" flood-opacity=".1"/>
     </filter>
   </defs>
-  <rect width="1440" height="620" rx="32" fill="#F4F8F5"/>
-  <text x="72" y="65" fill="#153D35" font-family="Arial, sans-serif" font-size="29" font-weight="800">Architecture with explicit data boundaries</text>
-  <text x="72" y="97" fill="#56665D" font-family="Arial, sans-serif" font-size="16">One local source of truth, two optional device/service edges</text>
 
-  <g transform="translate(72 162)" filter="url(#shadow)">
-    <rect width="282" height="296" rx="24" fill="#153D35"/>
+  <rect width="1440" height="780" rx="32" fill="#F4F8F5"/>
+  <text x="72" y="60" fill="#153D35" font-family="Arial, sans-serif" font-size="29" font-weight="800">Architecture with explicit data boundaries</text>
+  <text x="72" y="92" fill="#56665D" font-family="Arial, sans-serif" font-size="16">One local source of truth, one optional service, and one provider-managed photo edge</text>
+
+  <text x="72" y="132" fill="#829188" font-family="Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="1.5">PRESENTATION</text>
+  <text x="430" y="132" fill="#829188" font-family="Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="1.5">APP BOUNDARY</text>
+  <text x="1008" y="132" fill="#829188" font-family="Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="1.5">DATA / DEVICE EDGE</text>
+
+  <!-- Presentation column -->
+  <g transform="translate(72 150)" filter="url(#shadow)">
+    <rect width="280" height="510" rx="24" fill="#153D35"/>
     <circle cx="47" cy="47" r="25" fill="#B7E36D"/>
     <path d="M34 49a13 13 0 0 0 26 0h-4a9 9 0 0 1-18 0Z" fill="#0F766E"/>
     <path d="M38 44a9 9 0 0 1 18 0Z" fill="#FFFFFF"/>
     <text x="82" y="45" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="800">Interface</text>
-    <text x="82" y="67" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="12">MainActivity</text>
-    <rect x="26" y="99" width="230" height="55" rx="13" fill="#224D44"/>
-    <text x="43" y="124" fill="#D9F5E8" font-family="Arial, sans-serif" font-size="12" font-weight="700">Material 3 XML</text>
-    <text x="43" y="142" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="11">View Binding</text>
-    <rect x="26" y="167" width="230" height="55" rx="13" fill="#224D44"/>
-    <text x="43" y="192" fill="#D9F5E8" font-family="Arial, sans-serif" font-size="12" font-weight="700">Daily summary + journal</text>
-    <text x="43" y="210" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="11">Lifecycle-aware observation</text>
-    <rect x="26" y="235" width="230" height="35" rx="17.5" fill="#B7E36D"/>
-    <text x="141" y="258" text-anchor="middle" fill="#153D35" font-family="Arial, sans-serif" font-size="11" font-weight="800">USER-INITIATED ACTIONS</text>
+    <text x="82" y="67" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="12">ui / MainActivity</text>
+
+    <rect x="26" y="101" width="228" height="73" rx="14" fill="#224D44"/>
+    <text x="43" y="127" fill="#D9F5E8" font-family="Arial, sans-serif" font-size="12" font-weight="700">Material 3 XML</text>
+    <text x="43" y="147" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="11">View Binding + RecyclerView</text>
+
+    <rect x="26" y="190" width="228" height="73" rx="14" fill="#224D44"/>
+    <text x="43" y="216" fill="#D9F5E8" font-family="Arial, sans-serif" font-size="12" font-weight="700">Live daily snapshot</text>
+    <text x="43" y="236" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="11">Lifecycle-aware observation</text>
+
+    <rect x="26" y="279" width="228" height="73" rx="14" fill="#224D44"/>
+    <text x="43" y="305" fill="#D9F5E8" font-family="Arial, sans-serif" font-size="12" font-weight="700">Focused user flows</text>
+    <text x="43" y="325" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="11">Log • search • choose photo</text>
+
+    <rect x="26" y="376" width="228" height="42" rx="21" fill="#B7E36D"/>
+    <text x="140" y="402" text-anchor="middle" fill="#153D35" font-family="Arial, sans-serif" font-size="11" font-weight="800">USER-INITIATED ACTIONS</text>
+    <text x="140" y="451" text-anchor="middle" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="11">No account or background sync</text>
+    <text x="140" y="472" text-anchor="middle" fill="#AFC6B8" font-family="Arial, sans-serif" font-size="11">is required for the journal</text>
   </g>
 
-  <path d="M354 245H445" stroke="#0F766E" stroke-width="3" marker-end="url(#arrow)"/>
-  <text x="399" y="231" text-anchor="middle" fill="#56665D" font-family="Arial, sans-serif" font-size="11">observe / write</text>
-  <path d="M354 380H445" stroke="#0F766E" stroke-width="3" marker-end="url(#arrow)"/>
-  <text x="399" y="366" text-anchor="middle" fill="#56665D" font-family="Arial, sans-serif" font-size="11">search / select</text>
-
-  <g transform="translate(466 140)">
-    <rect width="413" height="164" rx="22" fill="#FFFFFF" stroke="#C7D5CC" filter="url(#shadow)"/>
-    <circle cx="44" cy="43" r="22" fill="#D9F5E8"/>
-    <path d="M31 38h26v18H31Z" fill="none" stroke="#0F766E" stroke-width="2"/>
-    <path d="M35 33h18v7H35Z" fill="#0F766E"/>
-    <text x="79" y="42" fill="#17251F" font-family="Arial, sans-serif" font-size="19" font-weight="800">Local journal path</text>
-    <text x="79" y="65" fill="#56665D" font-family="Arial, sans-serif" font-size="12">Always available • on-device</text>
-    <rect x="24" y="94" width="104" height="43" rx="11" fill="#D9F5E8"/>
-    <text x="76" y="120" text-anchor="middle" fill="#0F766E" font-family="Arial, sans-serif" font-size="11" font-weight="800">ViewModel</text>
-    <path d="M128 115h28" stroke="#0F766E" stroke-width="2" marker-end="url(#arrow)"/>
-    <rect x="163" y="94" width="108" height="43" rx="11" fill="#E9F0EB"/>
-    <text x="217" y="120" text-anchor="middle" fill="#153D35" font-family="Arial, sans-serif" font-size="11" font-weight="800">Repository</text>
-    <path d="M271 115h28" stroke="#0F766E" stroke-width="2" marker-end="url(#arrow)"/>
-    <rect x="306" y="94" width="82" height="43" rx="11" fill="#153D35"/>
-    <text x="347" y="120" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="800">Room</text>
+  <!-- Precisely shared row centres: 220, 390, 560. -->
+  <g fill="#56665D" font-family="Arial, sans-serif" font-size="10" text-anchor="middle">
+    <text x="391" y="207">state + command</text>
+    <text x="391" y="377">search</text>
+    <text x="391" y="547">choose</text>
+    <text x="969" y="207">Room</text>
+    <text x="969" y="377">HTTPS</text>
+    <text x="969" y="547">content URI</text>
+  </g>
+  <g fill="none" stroke="#0F766E" stroke-width="2.5" marker-end="url(#arrow)">
+    <path d="M352 220H408"/>
+    <path d="M352 390H408"/>
+    <path d="M352 560H408"/>
+    <path d="M930 220H986"/>
+    <path d="M930 390H986"/>
+    <path d="M930 560H986"/>
   </g>
 
-  <g transform="translate(466 330)">
-    <rect width="413" height="164" rx="22" fill="#FFFFFF" stroke="#C7D5CC" filter="url(#shadow)"/>
-    <circle cx="44" cy="43" r="22" fill="#FFE2DB"/>
-    <circle cx="42" cy="41" r="9" fill="none" stroke="#F9735B" stroke-width="3"/>
-    <line x1="48" y1="48" x2="56" y2="56" stroke="#F9735B" stroke-width="3"/>
-    <text x="79" y="42" fill="#17251F" font-family="Arial, sans-serif" font-size="19" font-weight="800">Optional search path</text>
-    <text x="79" y="65" fill="#56665D" font-family="Arial, sans-serif" font-size="12">Only with local credentials + user action</text>
-    <rect x="24" y="94" width="112" height="43" rx="11" fill="#D9F5E8"/>
-    <text x="80" y="120" text-anchor="middle" fill="#0F766E" font-family="Arial, sans-serif" font-size="11" font-weight="800">RetrofitClient</text>
-    <path d="M136 115h31" stroke="#0F766E" stroke-width="2" marker-end="url(#arrow)"/>
-    <rect x="174" y="94" width="102" height="43" rx="11" fill="#E9F0EB"/>
-    <text x="225" y="120" text-anchor="middle" fill="#153D35" font-family="Arial, sans-serif" font-size="11" font-weight="800">NutritionApi</text>
-    <path d="M276 115h31" stroke="#0F766E" stroke-width="2" marker-end="url(#arrow)"/>
-    <rect x="314" y="94" width="74" height="43" rx="11" fill="#F9735B"/>
-    <text x="351" y="120" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="10" font-weight="800">HTTPS</text>
+  <!-- Local journal path -->
+  <g transform="translate(430 150)">
+    <rect width="500" height="140" rx="22" fill="#FFFFFF" stroke="#C7D5CC" filter="url(#shadow)"/>
+    <circle cx="36" cy="36" r="19" fill="#D9F5E8"/>
+    <path d="M25 32h22v16H25Z" fill="none" stroke="#0F766E" stroke-width="2"/>
+    <path d="M29 27h14v6H29Z" fill="#0F766E"/>
+    <text x="67" y="35" fill="#17251F" font-family="Arial, sans-serif" font-size="18" font-weight="800">Local journal path</text>
+    <text x="67" y="57" fill="#56665D" font-family="Arial, sans-serif" font-size="11">Always available • on-device</text>
+
+    <rect x="24" y="83" width="126" height="38" rx="10" fill="#D9F5E8"/>
+    <text x="87" y="106" text-anchor="middle" fill="#0F766E" font-family="Arial, sans-serif" font-size="10" font-weight="800">MealViewModel</text>
+    <path d="M150 102H167" stroke="#0F766E" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="174" y="83" width="137" height="38" rx="10" fill="#E9F0EB"/>
+    <text x="242.5" y="106" text-anchor="middle" fill="#153D35" font-family="Arial, sans-serif" font-size="10" font-weight="800">MealRepository</text>
+    <path d="M311 102H328" stroke="#0F766E" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="335" y="83" width="141" height="38" rx="10" fill="#153D35"/>
+    <text x="405.5" y="106" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="10" font-weight="800">MealDao</text>
   </g>
 
-  <path d="M879 221H968" stroke="#0F766E" stroke-width="3" marker-end="url(#arrow)"/>
-  <path d="M879 412H968" stroke="#0F766E" stroke-width="3" marker-end="url(#arrow)"/>
+  <!-- Optional nutrition path -->
+  <g transform="translate(430 320)">
+    <rect width="500" height="140" rx="22" fill="#FFFFFF" stroke="#C7D5CC" filter="url(#shadow)"/>
+    <circle cx="36" cy="36" r="19" fill="#FFE2DB"/>
+    <circle cx="34" cy="34" r="8" fill="none" stroke="#F9735B" stroke-width="2.5"/>
+    <line x1="40" y1="40" x2="47" y2="47" stroke="#F9735B" stroke-width="2.5"/>
+    <text x="67" y="35" fill="#17251F" font-family="Arial, sans-serif" font-size="18" font-weight="800">Optional nutrition path</text>
+    <text x="67" y="57" fill="#56665D" font-family="Arial, sans-serif" font-size="11">Only with local credentials + explicit search</text>
 
-  <g transform="translate(992 140)" filter="url(#shadow)">
-    <rect width="376" height="164" rx="22" fill="#D9F5E8"/>
-    <text x="28" y="42" fill="#0F766E" font-family="Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="1">PRIVATE DEVICE DATA</text>
-    <text x="28" y="78" fill="#153D35" font-family="Arial, sans-serif" font-size="20" font-weight="800">MealMetric database</text>
-    <text x="28" y="105" fill="#56665D" font-family="Arial, sans-serif" font-size="13">Meals • calories • types • dates</text>
-    <text x="28" y="129" fill="#56665D" font-family="Arial, sans-serif" font-size="13">Local photo URI references</text>
+    <rect x="24" y="83" width="126" height="38" rx="10" fill="#D9F5E8"/>
+    <text x="87" y="106" text-anchor="middle" fill="#0F766E" font-family="Arial, sans-serif" font-size="10" font-weight="800">NutritionClient</text>
+    <path d="M150 102H167" stroke="#0F766E" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="174" y="83" width="137" height="38" rx="10" fill="#E9F0EB"/>
+    <text x="242.5" y="106" text-anchor="middle" fill="#153D35" font-family="Arial, sans-serif" font-size="10" font-weight="800">NutritionApi</text>
+    <path d="M311 102H328" stroke="#0F766E" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="335" y="83" width="141" height="38" rx="10" fill="#F9735B"/>
+    <text x="405.5" y="106" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="10" font-weight="800">Retrofit + OkHttp</text>
   </g>
 
-  <g transform="translate(992 330)" filter="url(#shadow)">
-    <rect width="376" height="164" rx="22" fill="#FFE2DB"/>
-    <text x="28" y="42" fill="#C74733" font-family="Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="1">EXTERNAL SERVICE BOUNDARY</text>
-    <text x="28" y="78" fill="#653127" font-family="Arial, sans-serif" font-size="20" font-weight="800">Nutritionix</text>
-    <text x="28" y="105" fill="#784A42" font-family="Arial, sans-serif" font-size="13">Receives the initiated food query</text>
-    <text x="28" y="129" fill="#784A42" font-family="Arial, sans-serif" font-size="13">Returns nutrition estimates</text>
+  <!-- Local photo path -->
+  <g transform="translate(430 490)">
+    <rect width="500" height="140" rx="22" fill="#FFFFFF" stroke="#C7D5CC" filter="url(#shadow)"/>
+    <circle cx="36" cy="36" r="19" fill="#E7EDF8"/>
+    <rect x="25" y="27" width="22" height="18" rx="2" fill="none" stroke="#5A6F9E" stroke-width="2"/>
+    <circle cx="41" cy="32" r="2.5" fill="#5A6F9E"/>
+    <path d="m28 42 6-6 5 5 3-3 5 5" fill="none" stroke="#5A6F9E" stroke-width="2" stroke-linejoin="round"/>
+    <text x="67" y="35" fill="#17251F" font-family="Arial, sans-serif" font-size="18" font-weight="800">Local photo path</text>
+    <text x="67" y="57" fill="#56665D" font-family="Arial, sans-serif" font-size="11">Provider-managed image • no upload</text>
+
+    <rect x="24" y="83" width="126" height="38" rx="10" fill="#E7EDF8"/>
+    <text x="87" y="106" text-anchor="middle" fill="#40547D" font-family="Arial, sans-serif" font-size="10" font-weight="800">OpenDocument</text>
+    <path d="M150 102H167" stroke="#0F766E" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="174" y="83" width="137" height="38" rx="10" fill="#E9F0EB"/>
+    <text x="242.5" y="106" text-anchor="middle" fill="#153D35" font-family="Arial, sans-serif" font-size="10" font-weight="800">Persist read grant</text>
+    <path d="M311 102H328" stroke="#0F766E" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="335" y="83" width="141" height="38" rx="10" fill="#153D35"/>
+    <text x="405.5" y="106" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="10" font-weight="800">Store URI reference</text>
   </g>
 
-  <rect x="72" y="540" width="1296" height="42" rx="21" fill="#153D35"/>
-  <text x="720" y="566" text-anchor="middle" fill="#D9F5E8" font-family="Arial, sans-serif" font-size="13" font-weight="700">Photos stay local • backups disabled • manual logging remains available without credentials</text>
+  <!-- External and device boundaries -->
+  <g transform="translate(1008 150)" filter="url(#shadow)">
+    <rect width="360" height="140" rx="22" fill="#D9F5E8"/>
+    <text x="27" y="35" fill="#0F766E" font-family="Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1">PRIVATE APP DATA</text>
+    <text x="27" y="68" fill="#153D35" font-family="Arial, sans-serif" font-size="19" font-weight="800">Room database</text>
+    <text x="27" y="94" fill="#56665D" font-family="Arial, sans-serif" font-size="12">Meals • calories • types • dates</text>
+    <text x="27" y="116" fill="#56665D" font-family="Arial, sans-serif" font-size="12">Newest-first observable daily journal</text>
+  </g>
+
+  <g transform="translate(1008 320)" filter="url(#shadow)">
+    <rect width="360" height="140" rx="22" fill="#FFE2DB"/>
+    <text x="27" y="35" fill="#C74733" font-family="Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1">EXTERNAL SERVICE</text>
+    <text x="27" y="68" fill="#653127" font-family="Arial, sans-serif" font-size="19" font-weight="800">Nutritionix API</text>
+    <text x="27" y="94" fill="#784A42" font-family="Arial, sans-serif" font-size="12">Receives the user’s food description</text>
+    <text x="27" y="116" fill="#784A42" font-family="Arial, sans-serif" font-size="12">Returns nutrition estimates</text>
+  </g>
+
+  <g transform="translate(1008 490)" filter="url(#shadow)">
+    <rect width="360" height="140" rx="22" fill="#E7EDF8"/>
+    <text x="27" y="35" fill="#5A6F9E" font-family="Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1">ANDROID DOCUMENT PROVIDER</text>
+    <text x="27" y="68" fill="#34476E" font-family="Arial, sans-serif" font-size="19" font-weight="800">Selected local image</text>
+    <text x="27" y="94" fill="#526382" font-family="Arial, sans-serif" font-size="12">Image bytes stay provider-managed</text>
+    <text x="27" y="116" fill="#526382" font-family="Arial, sans-serif" font-size="12">Room stores only the content URI</text>
+  </g>
+
+  <rect x="72" y="704" width="1296" height="44" rx="22" fill="#153D35"/>
+  <text x="720" y="731" text-anchor="middle" fill="#D9F5E8" font-family="Arial, sans-serif" font-size="13" font-weight="700">Photos stay local • backups are disabled • manual logging remains available without credentials</text>
 </svg>
