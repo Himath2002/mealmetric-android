@@ -1,19 +1,22 @@
-package io.github.himath2002.mealmetric;
+package io.github.himath2002.mealmetric.data.remote;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-final class NutritionResponse {
+import io.github.himath2002.mealmetric.model.NutritionEstimate;
+
+/** Minimal Nutritionix response mapped into MealMetric's domain model. */
+public final class NutritionSearchResponse {
 
     @SerializedName("foods")
     private List<Food> foods;
 
-    List<Food> getFoods() {
+    public List<Food> getFoods() {
         return foods;
     }
 
-    static final class Food {
+    public static final class Food {
 
         @SerializedName("food_name")
         private String name;
@@ -36,8 +39,8 @@ final class NutritionResponse {
         @SerializedName("nf_total_carbohydrate")
         private double carbohydrates;
 
-        FoodItem toFoodItem() {
-            return new FoodItem(
+        public NutritionEstimate toEstimate() {
+            return new NutritionEstimate(
                     name,
                     servingQuantity,
                     servingUnit,

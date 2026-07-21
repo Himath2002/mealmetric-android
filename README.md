@@ -54,16 +54,27 @@ The project demonstrates a production-minded Android foundation without hiding i
   <img src="docs/architecture.svg" alt="MealMetric architecture showing local journal, optional nutrition search, and local photo selection paths" width="100%">
 </p>
 
-The UI observes date-scoped `LiveData` from `MealViewModel`. Writes move through `MealRepository` onto a dedicated database executor, while Room remains the single source of truth. Nutrition lookup is isolated behind Retrofit and only runs when local credentials are present.
+The UI observes date-scoped `LiveData` from `MealViewModel`. Writes move through `MealRepository` onto a dedicated database executor, while Room remains the single source of truth. Nutrition lookup is isolated behind `NutritionClient` and `NutritionApi`, and only runs when local credentials are present.
 
 ```text
 MainActivity + View Binding
 ├── MealViewModel
 │   └── MealRepository
 │       └── Room: MealDatabase → MealDao → meals
-├── RetrofitClient → NutritionApi → Nutritionix (optional)
+├── NutritionClient → NutritionApi → Nutritionix (optional)
 └── Android OpenDocument → persisted local photo URI
 ```
+
+### Code organization
+
+| Package | Responsibility |
+| --- | --- |
+| `ui` | Activity orchestration and RecyclerView presentation |
+| `viewmodel` | Lifecycle-aware journal state and UI-facing commands |
+| `model` | Meal records and read-only nutrition estimates |
+| `data/local` | Room database and DAO contracts |
+| `data/repository` | The single persistence boundary used by the ViewModel |
+| `data/remote` | Nutrition request/response mapping and Retrofit configuration |
 
 ### Technical decisions
 
@@ -150,7 +161,14 @@ mealmetric-android/
 │   └── dependabot.yml                 # Monthly dependency review
 ├── app/
 │   ├── schemas/                       # Versioned Room schema history
-│   ├── src/main/java/.../mealmetric/  # UI, data, and network layers
+│   ├── src/main/java/.../mealmetric/
+│   │   ├── ui/                        # Activity and list presentation
+│   │   ├── viewmodel/                 # Lifecycle-aware journal state
+│   │   ├── model/                     # Local and remote-facing models
+│   │   └── data/
+│   │       ├── local/                 # Room database and DAO
+│   │       ├── repository/            # Persistence boundary
+│   │       └── remote/                # Nutritionix integration
 │   ├── src/main/res/                   # Layouts, themes, strings, vectors
 │   ├── build.gradle.kts
 │   └── lint.xml                       # Stable-platform lint policy

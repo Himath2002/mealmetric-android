@@ -1,6 +1,7 @@
-package io.github.himath2002.mealmetric;
+package io.github.himath2002.mealmetric.model;
 
-final class FoodItem {
+/** A structured, read-only estimate returned by the optional nutrition search. */
+public final class NutritionEstimate {
 
     private final String name;
     private final double servingQuantity;
@@ -10,7 +11,7 @@ final class FoodItem {
     private final double protein;
     private final double carbohydrates;
 
-    FoodItem(
+    public NutritionEstimate(
             String name,
             double servingQuantity,
             String servingUnit,
@@ -28,31 +29,31 @@ final class FoodItem {
         this.carbohydrates = carbohydrates;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    double getServingQuantity() {
+    public double getServingQuantity() {
         return servingQuantity;
     }
 
-    String getServingUnit() {
+    public String getServingUnit() {
         return servingUnit;
     }
 
-    double getCalories() {
+    public double getCalories() {
         return calories;
     }
 
-    double getTotalFat() {
+    public double getTotalFat() {
         return totalFat;
     }
 
-    double getProtein() {
+    public double getProtein() {
         return protein;
     }
 
-    double getCarbohydrates() {
+    public double getCarbohydrates() {
         return carbohydrates;
     }
 }

@@ -1,4 +1,4 @@
-package io.github.himath2002.mealmetric;
+package io.github.himath2002.mealmetric.viewmodel;
 
 import android.app.Application;
 
@@ -8,6 +8,10 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+import io.github.himath2002.mealmetric.data.repository.MealRepository;
+import io.github.himath2002.mealmetric.model.Meal;
+
+/** Lifecycle-aware state holder for the currently selected journal date. */
 public final class MealViewModel extends AndroidViewModel {
 
     private final MealRepository repository;
@@ -17,11 +21,11 @@ public final class MealViewModel extends AndroidViewModel {
         repository = new MealRepository(application);
     }
 
-    LiveData<List<Meal>> observeMealsForDate(String date) {
+    public LiveData<List<Meal>> observeMealsForDate(String date) {
         return repository.observeMealsForDate(date);
     }
 
-    void addMeal(Meal meal) {
+    public void addMeal(Meal meal) {
         repository.insert(meal);
     }
 }
