@@ -1,4 +1,4 @@
-package io.github.himath2002.mealmetric;
+package io.github.himath2002.mealmetric.data.remote;
 
 import java.util.concurrent.TimeUnit;
 
@@ -7,19 +7,27 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-final class RetrofitClient {
+import io.github.himath2002.mealmetric.BuildConfig;
+
+/** Creates the configured client for MealMetric's optional nutrition service. */
+public final class NutritionClient {
 
     private static final String BASE_URL = "https://trackapi.nutritionix.com/";
     private static final long NETWORK_TIMEOUT_SECONDS = 15;
 
     private static volatile Retrofit retrofit;
 
-    private RetrofitClient() {
+    private NutritionClient() {
     }
 
-    static Retrofit getInstance() {
+    /** Returns a service contract backed by the shared Retrofit instance. */
+    public static NutritionApi createApi() {
+        return getRetrofit().create(NutritionApi.class);
+    }
+
+    private static Retrofit getRetrofit() {
         if (retrofit == null) {
-            synchronized (RetrofitClient.class) {
+            synchronized (NutritionClient.class) {
                 if (retrofit == null) {
                     retrofit = createRetrofit();
                 }

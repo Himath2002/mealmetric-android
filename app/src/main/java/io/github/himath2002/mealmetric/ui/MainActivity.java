@@ -1,4 +1,4 @@
-package io.github.himath2002.mealmetric;
+package io.github.himath2002.mealmetric.ui;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -33,12 +33,27 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import io.github.himath2002.mealmetric.BuildConfig;
+import io.github.himath2002.mealmetric.R;
+import io.github.himath2002.mealmetric.data.remote.NutritionApi;
+import io.github.himath2002.mealmetric.data.remote.NutritionClient;
+import io.github.himath2002.mealmetric.data.remote.NutritionSearchRequest;
+import io.github.himath2002.mealmetric.data.remote.NutritionSearchResponse;
 import io.github.himath2002.mealmetric.databinding.ActivityMainBinding;
 import io.github.himath2002.mealmetric.databinding.DialogMealBinding;
+import io.github.himath2002.mealmetric.model.Meal;
+import io.github.himath2002.mealmetric.model.NutritionEstimate;
+import io.github.himath2002.mealmetric.viewmodel.MealViewModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Hosts MealMetric's single-screen journal and coordinates user-initiated UI flows.
+ *
+ * <p>Persistent state remains behind {@link MealViewModel}; this activity only owns
+ * short-lived presentation state such as an open meal dialog or in-flight search.</p>
+ */
 public final class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MealMetric";
@@ -50,7 +65,7 @@ public final class MainActivity extends AppCompatActivity {
     private ActivityResultLauncher<String[]> photoPickerLauncher;
     private DialogMealBinding activeMealDialogBinding;
     private Uri selectedMealPhoto;
-    private Call<NutritionResponse> activeSearchCall;
+    private Call<NutritionSearchResponse> activeSearchCall;
     private String currentDateKey;
 
     @Override
@@ -170,35 +185,35 @@ public final class MainActivity extends AppCompatActivity {
         }
 
         setSearchInProgress(true);
-        NutritionApi api = RetrofitClient.getInstance().create(NutritionApi.class);
+        NutritionApi api = NutritionClient.createApi();
         activeSearchCall = api.searchFood(
                 BuildConfig.NUTRITIONIX_APP_ID,
                 BuildConfig.NUTRITIONIX_APP_KEY,
-                new SearchRequest(query)
+                new NutritionSearchRequest(query)
         );
         activeSearchCall.enqueue(new Callback<>() {
             @Override
             public void onResponse(
-                    @NonNull Call<NutritionResponse> call,
-                    @NonNull Response<NutritionResponse> response
+                    @NonNull Call<NutritionSearchResponse> call,
+                    @NonNull Response<NutritionSearchResponse> response
             ) {
                 if (isFinishing() || isDestroyed()) {
                     return;
                 }
                 activeSearchCall = null;
                 setSearchInProgress(false);
-                NutritionResponse body = response.body();
+                NutritionSearchResponse body = response.body();
                 if (!response.isSuccessful() || body == null || body.getFoods() == null) {
                     showSearchFailure(response.code());
                     return;
                 }
 
-                List<FoodItem> foodItems = new ArrayList<>();
-                for (NutritionResponse.Food food : body.getFoods()) {
-                    foodItems.add(food.toFoodItem());
+                List<NutritionEstimate> estimates = new ArrayList<>();
+                for (NutritionSearchResponse.Food food : body.getFoods()) {
+                    estimates.add(food.toEstimate());
                 }
 
-                if (foodItems.isEmpty()) {
+                if (estimates.isEmpty()) {
                     Toast.makeText(
                             MainActivity.this,
                             R.string.food_search_empty,
@@ -207,12 +222,12 @@ public final class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                showFoodSelectionDialog(foodItems);
+                showFoodSelectionDialog(estimates);
             }
 
             @Override
             public void onFailure(
-                    @NonNull Call<NutritionResponse> call,
+                    @NonNull Call<NutritionSearchResponse> call,
                     @NonNull Throwable throwable
             ) {
                 if (call.isCanceled() || isFinishing() || isDestroyed()) {
@@ -248,30 +263,30 @@ public final class MainActivity extends AppCompatActivity {
         binding.foodSearchInput.setEnabled(!inProgress);
     }
 
-    private void showFoodSelectionDialog(List<FoodItem> foodItems) {
-        CharSequence[] options = new CharSequence[foodItems.size()];
+    private void showFoodSelectionDialog(List<NutritionEstimate> estimates) {
+        CharSequence[] options = new CharSequence[estimates.size()];
         NumberFormat numberFormat = NumberFormat.getNumberInstance();
 
-        for (int index = 0; index < foodItems.size(); index++) {
-            FoodItem food = foodItems.get(index);
+        for (int index = 0; index < estimates.size(); index++) {
+            NutritionEstimate estimate = estimates.get(index);
             options[index] = getString(
                     R.string.food_search_result,
-                    food.getName(),
-                    numberFormat.format(food.getServingQuantity()),
-                    food.getServingUnit(),
-                    Math.round(food.getCalories())
+                    estimate.getName(),
+                    numberFormat.format(estimate.getServingQuantity()),
+                    estimate.getServingUnit(),
+                    Math.round(estimate.getCalories())
             );
         }
 
         new MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.food_search_results_title)
                 .setItems(options, (dialog, selectedIndex) ->
-                        showMealDialog(foodItems.get(selectedIndex)))
+                        showMealDialog(estimates.get(selectedIndex)))
                 .setNegativeButton(R.string.action_cancel, null)
                 .show();
     }
 
-    private void showMealDialog(@Nullable FoodItem suggestedFood) {
+    private void showMealDialog(@Nullable NutritionEstimate suggestedFood) {
         DialogMealBinding dialogBinding = DialogMealBinding.inflate(getLayoutInflater());
         activeMealDialogBinding = dialogBinding;
         selectedMealPhoto = null;

@@ -1,4 +1,4 @@
-package io.github.himath2002.mealmetric;
+package io.github.himath2002.mealmetric.ui;
 
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -9,8 +9,11 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import io.github.himath2002.mealmetric.R;
 import io.github.himath2002.mealmetric.databinding.MealItemBinding;
+import io.github.himath2002.mealmetric.model.Meal;
 
+/** Renders immutable snapshots of the current day's persisted meal entries. */
 final class MealAdapter extends ListAdapter<Meal, MealAdapter.MealViewHolder> {
 
     private static final DiffUtil.ItemCallback<Meal> DIFF_CALLBACK =

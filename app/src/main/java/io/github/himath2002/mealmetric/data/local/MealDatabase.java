@@ -1,4 +1,4 @@
-package io.github.himath2002.mealmetric;
+package io.github.himath2002.mealmetric.data.local;
 
 import android.content.Context;
 
@@ -9,6 +9,9 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import io.github.himath2002.mealmetric.model.Meal;
+
+/** Process-wide Room database for MealMetric's private on-device journal. */
 @Database(entities = {Meal.class}, version = 1, exportSchema = true)
 public abstract class MealDatabase extends RoomDatabase {
 
@@ -17,12 +20,13 @@ public abstract class MealDatabase extends RoomDatabase {
 
     private static volatile MealDatabase instance;
 
-    static final ExecutorService databaseWriteExecutor =
+    private static final ExecutorService DATABASE_WRITE_EXECUTOR =
             Executors.newFixedThreadPool(WRITE_THREAD_COUNT);
 
     public abstract MealDao mealDao();
 
-    static MealDatabase getInstance(Context context) {
+    /** Returns the lazily created application-scoped database instance. */
+    public static MealDatabase getInstance(Context context) {
         if (instance == null) {
             synchronized (MealDatabase.class) {
                 if (instance == null) {
@@ -36,5 +40,10 @@ public abstract class MealDatabase extends RoomDatabase {
             }
         }
         return instance;
+    }
+
+    /** Schedules one database mutation away from the main thread. */
+    public static void executeWrite(Runnable operation) {
+        DATABASE_WRITE_EXECUTOR.execute(operation);
     }
 }

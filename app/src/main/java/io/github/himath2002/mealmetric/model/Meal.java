@@ -1,4 +1,4 @@
-package io.github.himath2002.mealmetric;
+package io.github.himath2002.mealmetric.model;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
@@ -6,7 +6,8 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "meals", indices = {@Index("date")})
-public class Meal {
+/** A locally persisted meal entry scoped to one calendar date. */
+public final class Meal {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
