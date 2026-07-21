@@ -87,14 +87,14 @@ MainActivity + View Binding
 | Networking | Retrofit 3, Gson converter, and OkHttp timeouts |
 | Photos | Storage Access Framework; URI reference only |
 | Secrets | Ignored `secrets.properties` or environment variables |
-| Toolchain | Java 17, Android API 36, Gradle wrapper, version catalog |
+| Toolchain | Java 17 source compatibility, JDK 21 build runtime, Android API 36, Gradle wrapper, version catalog |
 
 ## Run locally
 
 ### Prerequisites
 
 - Android Studio with Android SDK 36
-- JDK 17 or newer
+- JDK 21
 - An emulator or Android device running API 24+
 
 ### 1. Clone and open

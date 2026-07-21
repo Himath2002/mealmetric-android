@@ -5,6 +5,19 @@ Notable changes to MealMetric are recorded here. The project follows
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-07-22
+
+### Fixed
+
+- Aligned the GitHub Actions runtime with Android Lint's Java 21 runtime
+  requirement, preventing an internal `BidirectionalTextDetector` crash on CI.
+- Synchronized the Android package version with the published patch release.
+
+### Verified
+
+- Clean debug APK assembly on JDK 21.
+- Android lint with no reported issues on JDK 21.
+
 ## [1.1.0] - 2026-07-21
 
 ### Changed
@@ -32,6 +45,7 @@ Notable changes to MealMetric are recorded here. The project follows
 - Provider-managed photo selection with persisted read access.
 - Light and dark Material 3 themes, CI, dependency review, and publication docs.
 
-[Unreleased]: https://github.com/Himath2002/mealmetric-android/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/Himath2002/mealmetric-android/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/Himath2002/mealmetric-android/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/Himath2002/mealmetric-android/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Himath2002/mealmetric-android/releases/tag/v1.0.0
