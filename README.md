@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/hero.svg" alt="MealMetric — a privacy-minded Android meal and calorie journal" width="100%">
+  <img src="docs/hero.svg" alt="MealMetric - a privacy-minded Android meal and calorie journal" width="100%">
 </p>
 
 <p align="center">
@@ -24,12 +24,12 @@ The project demonstrates a production-minded Android foundation without hiding i
 
 ### Product highlights
 
-- **Fast daily capture** — record a meal name, calories, type, and optional local photo.
-- **Live daily snapshot** — observe total energy and meal count as the journal changes.
-- **Natural-language lookup** — search descriptions such as “two eggs and toast” when Nutritionix is configured.
-- **Local-first storage** — Room persists meal records on the device; selected images remain content URIs.
-- **Graceful optional integration** — the app compiles and manual logging works without API credentials.
-- **Purpose-built interface** — custom MealMetric palette, iconography, empty state, light theme, and dark theme.
+- **Fast daily capture** - record a meal name, calories, type, and optional local photo.
+- **Live daily snapshot** - observe total energy and meal count as the journal changes.
+- **Natural-language lookup** - search descriptions such as “two eggs and toast” when Nutritionix is configured.
+- **Local-first storage** - Room persists meal records on the device; selected images remain content URIs.
+- **Graceful optional integration** - the app compiles and manual logging works without API credentials.
+- **Purpose-built interface** - custom MealMetric palette, iconography, empty state, light theme, and dark theme.
 
 ## Product walkthrough
 
@@ -116,7 +116,7 @@ The debug APK is generated at `app/build/outputs/apk/debug/app-debug.apk`.
 
 ### 3. Run
 
-Select an API 24+ device in Android Studio, then run the `app` configuration. Manual meal logging is ready immediately—no service account or cloud project is required.
+Select an API 24+ device in Android Studio, then run the `app` configuration. Manual meal logging is ready immediately-no service account or cloud project is required.
 
 ## Optional Nutritionix search
 

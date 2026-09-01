@@ -31,7 +31,7 @@
     <circle cx="42" cy="42" r="21" fill="#153D35"/>
     <text x="42" y="49" text-anchor="middle" fill="#B7E36D" font-family="Arial, sans-serif" font-size="18" font-weight="800">1</text>
     <text x="76" y="40" fill="#17251F" font-family="Arial, sans-serif" font-size="21" font-weight="800">Capture</text>
-    <text x="76" y="62" fill="#56665D" font-family="Arial, sans-serif" font-size="13">Search when configured—or log directly</text>
+    <text x="76" y="62" fill="#56665D" font-family="Arial, sans-serif" font-size="13">Search when configured-or log directly</text>
 
     <rect x="27" y="96" width="310" height="178" rx="20" fill="#FFFFFF" stroke="#C7D5CC"/>
     <text x="49" y="128" fill="#17251F" font-family="Arial, sans-serif" font-size="17" font-weight="800">Smart food lookup</text>
